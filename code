@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug 16 15:35:53 2017
+
+@author: shimizu
+"""
+
+from bs4 import BeautifulSoup
+import urllib2 as req
+
+url = "http://api.aoikujira.com/zip/xml/1500042"
+
+res = req.urlopen(url)
+
+soup = BeautifulSoup(res,"html.parser")
+
+ken =soup.find("ken").string
+shi =soup.find("shi").string
+cho = soup.find("cho").string
+
+print(ken)
+print(shi)
+print(cho)
+
